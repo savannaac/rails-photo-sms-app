@@ -6,10 +6,10 @@ class LikesController < ApplicationController
         if already_liked?
             flash.alert = "oops, can't like more than once"
         else
-            @photo.likes.create(user_id: current_user.id)
+            @photo.likes.create(like_params)
         end
 
-        redirect_to photo_path(@photo)
+        redirect_to photo_path(@like.photo_id)
     end
 
     def destroy
@@ -19,6 +19,9 @@ class LikesController < ApplicationController
     end
 
     private
+        def like_params
+            params.require(:like).permit(:user_id, :photo_id)
+        end
 
         def find_photos
             @photo = Photo.find(params[:photo_id])

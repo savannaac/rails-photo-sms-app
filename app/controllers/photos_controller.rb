@@ -49,13 +49,13 @@ class PhotosController < ApplicationController
         redirect_to user_photos_path
     end
 
-    def like
-        find_photos
+    # def like
+    #     find_photos
 
-        Like.create(user_id: current_user.id, photo_id: @photo.id)
+    #     Like.create(user_id: current_user.id, photo_id: @photo.id)
 
-        redirect_to photo_path(@photo)
-    end
+    #     redirect_to photo_path(@photo)
+    # end
 
     private 
 
