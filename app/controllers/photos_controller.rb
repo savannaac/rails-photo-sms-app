@@ -27,17 +27,20 @@ class PhotosController < ApplicationController
     end
 
     def show
-        find_photos
+        # find_photos
     end
 
     def edit
-        find_photos
+        # find_photos
     end
 
     def update
-        @photo.update(photo_params)
+        if @photo.update(photo_params)
 
-        redirect_to photo_path(@photo)
+            redirect_to photo_path(@photo)
+        else
+            render :edit
+        end
     end
 
     def destroy
@@ -46,6 +49,14 @@ class PhotosController < ApplicationController
         redirect_to user_photos_path
     end
 
+    def like
+        find_photos
+
+        Like.create(user_id: current_user.id, photo_id: @photo.id)
+
+        redirect_to photo_path(@photo)
+    end
+    
 private 
 
     def find_photos

@@ -8,5 +8,7 @@ Rails.application.routes.draw do
     resources :photos
   end
   
-  get "all", to: "photos#all"
+  put "/photo/:id/like", to: "photos#like", as: "like"
+  
+  # get "all", to: "photos#all"
 end

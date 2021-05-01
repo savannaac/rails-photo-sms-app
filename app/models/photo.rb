@@ -5,4 +5,9 @@ class Photo < ApplicationRecord
 
      validates :img_url, presence: true
      # validates :public, presence: true 
+
+     def liked?(user)
+          !!self.likes.find{ |like| like.user_id == user.id }
+      end
+  
 end
