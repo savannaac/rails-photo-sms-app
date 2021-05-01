@@ -7,8 +7,13 @@ Rails.application.routes.draw do
   resources :users do
     resources :photos
   end
+
+  resources :photos do
+    resources :likes
+  end
   
-  put "/photo/:id/like", to: "photos#like", as: "like"
-  
+  # for simple like feature
+  # put "/photo/:id/like", to: "photos#like", as: "like"
+
   # get "all", to: "photos#all"
 end

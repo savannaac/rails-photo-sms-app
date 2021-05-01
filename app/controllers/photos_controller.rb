@@ -56,14 +56,14 @@ class PhotosController < ApplicationController
 
         redirect_to photo_path(@photo)
     end
-    
-private 
 
-    def find_photos
-        @photo = Photo.find(params[:id])
-    end
+    private 
 
-    def photo_params
-        params.require(:photo).permit(:img_url, :user_id)
-    end
+        def find_photos
+            @photo = Photo.find(params[:id])
+        end
+
+        def photo_params
+            params.require(:photo).permit(:img_url, :user_id)
+        end
 end
