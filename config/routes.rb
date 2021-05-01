@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   get "/signup", to: "users#new"
 
   resources :users, except: [:new] do
-    resources :photos, only: [:index, :new, :show]
+    resources :photos
   end
-
-  resources :photos, only: [:create, :edit, :update, :destroy]
+  
+  get "all", to: "photos#all"
 end
