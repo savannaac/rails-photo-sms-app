@@ -58,7 +58,6 @@ class PhotosController < ApplicationController
     # end
 
     private 
-
         def find_photos
             @photo = Photo.find(params[:id])
         end

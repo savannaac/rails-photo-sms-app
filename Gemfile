@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{rails-photo-sms-app}.git" }
 ruby '2.6.1'
 
 gem "devise"
+gem "dotenv"
 gem "omniauth"
 gem "omniauth-github"
 gem "twilio-ruby", "~> 5.52.0"

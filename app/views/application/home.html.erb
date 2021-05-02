@@ -1,14 +1,12 @@
-<h1>APP NAME</h1>
+<h1>APP_NAME</h1>
 
 
-<%= button_to "sign out", destroy_user_session_path, method: "delete"%>
 
-<% if current_user %>
-       
-<%= link_to "create new photo", new_user_photo_path(current_user) %>
-    <% else %>
 
-        <%= link_to "sign up", new_user_registration_path %>
-        <%= link_to "log in", new_user_session_path %>
-
+<% if current_user %>   
+    <%= link_to "create new photo", new_user_photo_path(current_user) %>
+    <%= button_to "sign out", destroy_user_session_path, method: "delete"%>
+<% else %>
+    <%= link_to "sign up", new_user_registration_path %>
+    <%= link_to "log in", new_user_session_path %>
 <% end %>
