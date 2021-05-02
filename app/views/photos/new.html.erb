@@ -1,12 +1,15 @@
 <%= form_with model: @photo, url: user_photos_path(current_user, @photo), method: "post" do |f| %>
     <%= f.label :img_url, "photo url:" %>
-    <%= f.text_field :img_url %><br />
+    <%= f.text_field :img_url %><br /><br />
 
     <%= f.label :description, "description:" %>
-    <%= f.text_field :description %><br />
+    <%= f.text_field :description %><br /><br />
 
     <%= f.label :public, "share photo with others?" %>
     <%= f.check_box :public %><br /><br />
 
     <%= f.submit "upload photo" %>
-    <% end %>
+<% end %>
+
+<br /><br />
+<%= button_to "sign out", destroy_user_session_path, method: "delete"%>

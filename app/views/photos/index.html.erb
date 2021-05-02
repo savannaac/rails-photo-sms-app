@@ -1,0 +1,9 @@
+<h1>My Photos</h2>
+
+<%= link_to "home", root_path %><br />
+<%= link_to "public feed", all_path %><br /><br />
+<%= button_to "sign out", destroy_user_session_path, method: "delete" %><br /><br />
+
+<% @photos.each do |photo| %>
+    <%= image_tag(photo.img_url) %>
+<% end %>
