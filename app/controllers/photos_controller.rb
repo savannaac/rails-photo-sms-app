@@ -20,7 +20,7 @@ class PhotosController < ApplicationController
         if @photo.save
             flash.notice = "upload successful"
 
-            redirect_to root_path 
+            redirect_to photo_path(@photo)
         else
             redirect_to root_path
         end
@@ -63,6 +63,6 @@ class PhotosController < ApplicationController
         end
 
         def photo_params
-            params.require(:photo).permit(:img_url, :user_id)
+            params.require(:photo).permit(:img_url, :public,  :user_id)
         end
 end

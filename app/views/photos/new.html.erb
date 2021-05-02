@@ -1,7 +1,12 @@
 <%= form_with model: @photo, url: user_photos_path(current_user, @photo), method: "post" do |f| %>
-    <%= f.label :img_url, "url:" %>
-    <%= f.text_field :img_url %>
+    <%= f.label :img_url, "photo url:" %>
+    <%= f.text_field :img_url %><br />
 
-    <f.label :description, "description
-    <%= f.submit "upload photo %>
+    <%= f.label :description, "description:" %>
+    <%= f.text_field :description %><br />
+
+    <%= f.label :public, "share photo with others?" %>
+    <%= f.check_box :public %><br /><br />
+
+    <%= f.submit "upload photo" %>
     <% end %>
