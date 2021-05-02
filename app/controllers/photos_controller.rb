@@ -5,9 +5,10 @@ class PhotosController < ApplicationController
         @photos = current_user.photos
     end
 
-    def all
-       @photos = Photo.public.where("true") 
-    end
+    # def all
+    #    #@photos = Photo.public.where("true") 
+    #    @photos = Photo.all
+    # end
 
     def new
        @photo = Photo.new
@@ -63,6 +64,6 @@ class PhotosController < ApplicationController
         end
 
         def photo_params
-            params.require(:photo).permit(:img_url, :public,  :user_id)
+            params.require(:photo).permit(:img_url,  :user_id)
         end
 end

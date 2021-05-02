@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   
   root "application#home"
 
+  get "all", to: "application#all", as: "all"
+
   resources :users do
     resources :photos
   end
@@ -14,6 +16,4 @@ Rails.application.routes.draw do
   
   # for simple like feature
   # put "/photo/:id/like", to: "photos#like", as: "like"
-
-  # get "all", to: "photos#all"
 end

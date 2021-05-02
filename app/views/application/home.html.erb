@@ -1,9 +1,8 @@
 <h1>APP_NAME</h1>
 
-
-
-
-<% if current_user %>   
+# signed in 
+<% if current_user %>  
+    <%= link_to "home", "/photos/all" %>
     <%= link_to "create new photo", new_user_photo_path(current_user) %>
     <%= button_to "sign out", destroy_user_session_path, method: "delete"%>
 <% else %>
