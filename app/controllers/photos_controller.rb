@@ -6,11 +6,6 @@ class PhotosController < ApplicationController
         @photos = current_user.photos
     end
 
-    # def all
-    #    #@photos = Photo.public.where("true") 
-    #    @photos = Photo.all
-    # end
-
     def new
        @photo = Photo.new
     end

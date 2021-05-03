@@ -1,2 +1,10 @@
 <h1>public feed</h1>
 
+<%= link_to "home", root_path %><br />
+<%= link_to "my photos", user_photos_path(current_user) %><br />
+<%= link_to "create new photo", new_user_photo_path(current_user) %><br /><br />
+<%= button_to "sign out", destroy_user_session_path, method: "delete"%><br><br>
+
+<% @photos.each do |photo| %>
+    <%= image_tag(photo.img_url, height: 200, width: 200) %>
+<% end %>
