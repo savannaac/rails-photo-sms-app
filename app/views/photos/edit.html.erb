@@ -1,1 +1,23 @@
-<h1>edit</h1>
+<% if @photo.user_id == current_user.id %>
+    <h1>edit</h1>
+
+    <%= image_tag(@photo.img_url) %><br><br><br>
+
+    <%= form_with model: @photo, url: user_photo_path(current_user, @photo), method: "patch" do |f| %>
+        <%= f.label "photo url" %>
+        <%= f.text_field :img_url %><br>
+
+        <%= f.label "description" %>
+        <%= f.text_field :description %>
+
+        <%= f.label "share with others?" %>
+        <%= f.check_box :public %><br><br>
+
+        <%= f.submit "update" %>
+    <% end %>
+    <%= button_to "delete photo", @photo, method: "delete" %><br />
+<% else %>
+    <h1>APP NAME</h1>
+        <%= link_to "sign up", new_user_registration_path %><br />
+        <%= link_to "log in", new_user_session_path %>
+<% end %>

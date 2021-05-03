@@ -1,10 +1,17 @@
-<%= link_to "home", root_path %><br />
-<%= link_to "feed", all_path %><br />
-<%= link_to "edit", edit_user_photo_path %>
-<%= button_to "sign out", destroy_user_session_path, method: "delete" %><br /><br />
 
-<%= image_tag(@photo.img_url) %><br />
+<% if @photo.user_id == current_user.id %>
+    <%= link_to "my photos", user_photos_path(current_user) %><br />
+    <%= link_to "public feed", all_path %><br />
+    <%= link_to "edit", edit_user_photo_path(current_user, @photo) %><br><br>
+    <%= button_to "sign out", destroy_user_session_path, method: "delete" %><br /><br />
 
-<div>
-<p><%= @photo.description %></p>
-</div>
+    <%= image_tag(@photo.img_url) %><br />
+
+    <div>
+    <p><%= @photo.description %></p> <%= button_to "delete photo", @photo, method: "delete" %><br />
+    </div>
+<% else %>
+    <h1>APP NAME</h1>
+        <%= link_to "sign up", new_user_registration_path %><br />
+        <%= link_to "log in", new_user_session_path %>
+<% end %>

@@ -1,5 +1,6 @@
 class PhotosController < ApplicationController
     before_action :find_photos, only: [:show, :edit, :update, :destroy]
+    # before_action :correct_users_photos, only: [:show, :edit, :update, :destroy]
 
     def index
         @photos = current_user.photos
@@ -21,7 +22,7 @@ class PhotosController < ApplicationController
         if @photo.save
             flash.notice = "upload successful"
 
-            redirect_to photo_path(@photo)
+            redirect_to user_photo_path(current_user, @photo)
         else
             redirect_to root_path
         end
@@ -38,7 +39,7 @@ class PhotosController < ApplicationController
     def update
         if @photo.update(photo_params)
 
-            redirect_to photo_path(@photo)
+            redirect_to user_photo_path(current_user, @photo)
         else
             render :edit
         end
@@ -47,7 +48,7 @@ class PhotosController < ApplicationController
     def destroy
         @photo.destroy
     
-        redirect_to user_photos_path
+        redirect_to user_photos_path(current_user)
     end
 
     # def like
@@ -64,6 +65,10 @@ class PhotosController < ApplicationController
         end
 
         def photo_params
-            params.require(:photo).permit(:img_url,  :user_id)
+            params.require(:photo).permit(:img_url, :description, :checkbox_value, :user_id)
         end
+
+        # def correct_users_photos
+        #     @photo = current_user.photos.find_by(id: params[:id])
+        # end
 end

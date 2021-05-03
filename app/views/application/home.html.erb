@@ -1,8 +1,7 @@
 <h1>APP_NAME</h1>
 
-<!-- signed in -->
 <% if current_user %>  
-    <%= link_to "home", all_path %><br />
+    <%= link_to "public feed", all_path %><br />
     <%= link_to "my photos", user_photos_path(current_user) %><br />
     <%= link_to "create new photo", new_user_photo_path(current_user) %><br /><br />
     <%= button_to "sign out", destroy_user_session_path, method: "delete"%>
