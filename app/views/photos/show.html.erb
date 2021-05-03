@@ -8,7 +8,7 @@
     <%= image_tag(@photo.img_url) %><br />
 
     <div>
-    <p><%= @photo.description %></p> <%= button_to "delete photo", @photo, method: "delete" %><br />
+    <p><%= @photo.description %> (<%= @photo.public %>)</p> <%= button_to "delete photo", @photo, method: "delete" %><br />
     </div>
 <% else %>
     <h1>APP NAME</h1>

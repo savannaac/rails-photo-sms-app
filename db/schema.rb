@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2021_04_24_043040) do
     t.integer "user_id"
     t.string "img_url"
     t.string "description"
-    t.boolean "public"
+    t.string "public"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

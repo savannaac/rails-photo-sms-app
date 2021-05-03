@@ -10,8 +10,7 @@
         <%= f.label "description" %>
         <%= f.text_field :description %>
 
-        <%= f.label "share with others?" %>
-        <%= f.check_box :public %><br><br>
+        <%= f.collection_select :public, Photo::CHOICES, :to_s, :to_s %><br /><br />
 
         <%= f.submit "update" %>
     <% end %>

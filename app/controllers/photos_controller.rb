@@ -65,7 +65,7 @@ class PhotosController < ApplicationController
         end
 
         def photo_params
-            params.require(:photo).permit(:img_url, :description, :checkbox_value, :user_id)
+            params.require(:photo).permit(:img_url, :description, :public, :user_id)
         end
 
         # def correct_users_photos

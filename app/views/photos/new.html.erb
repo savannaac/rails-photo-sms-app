@@ -1,14 +1,15 @@
+<h1>upload a photo</h1>
+
 <%= form_with model: @photo, url: user_photos_path(current_user, @photo), method: "post" do |f| %>
     <%= f.label :img_url, "photo url:" %>
     <%= f.text_field :img_url %><br /><br />
 
     <%= f.label :description, "description:" %>
-    <%= f.text_field :description %><br /><br />
+    <%= f.text_field :description %>
 
-    <%= f.label :public, "share photo with others?" %>
-    <%= f.check_box :public %><br /><br />
+    <%= f.collection_select :public, Photo::CHOICES, :to_s, :to_s %><br /><br />
 
-    <%= f.submit "upload photo" %>
+    <%= f.submit "upload" %>
 <% end %>
 
 <br /><br />
