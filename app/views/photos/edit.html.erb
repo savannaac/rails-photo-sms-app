@@ -1,8 +1,6 @@
 <% if @photo.user_id == current_user.id %>
     <h1>edit</h1>
 
-    <%= image_tag(@photo.img_url) %><br><br><br>
-
     <%= form_with model: @photo, url: user_photo_path(current_user, @photo), method: "patch" do |f| %>
         <%= f.label "photo url" %>
         <%= f.text_field :img_url %><br>
@@ -14,6 +12,9 @@
 
         <%= f.submit "update" %>
     <% end %>
+
+    <br><%= image_tag(@photo.img_url) %><br><br><br>
+
     <%= button_to "delete photo", @photo, method: "delete" %><br />
 <% else %>
     <h1>APP NAME</h1>
