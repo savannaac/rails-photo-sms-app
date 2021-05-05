@@ -1,12 +1,14 @@
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{rails-photo-sms-app}.git" }
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
 
-gem "devise"
-gem "dotenv"
+gem 'devise', github: 'heartcombo/devise'
+gem "dotenv-rails"
+gem "figaro"
 gem "omniauth"
-gem "omniauth-github"
+gem "omniauth-google-oauth2"
+gem "omniauth-rails_csrf_protection"
 gem "twilio-ruby", "~> 5.52.0"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.1'

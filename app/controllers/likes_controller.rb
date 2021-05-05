@@ -1,6 +1,6 @@
 class LikesController < ApplicationController
     before_action :find_photos
-    # before_action :find_likes, only: [:destroy]
+    before_action :find_likes, only: [:destroy]
 
     def create
         if already_liked?
@@ -12,27 +12,27 @@ class LikesController < ApplicationController
         redirect_to all_path
     end
 
-    # def destroy
-    #     if !(already_liked?)
-    #         flash.alert = "oops, can't unlike"
-    #     else
-    #         @like.destroy
+    def destroy
+        if !(already_liked?)
+            flash.alert = "oops, can't unlike"
+        else
+            @like.destroy
 
-    #         redirect_to all_path
-    #     end
-    # end
+            redirect_to all_path
+        end
+    end
 
     private
-        # def like_params
-        #     params.require(:like).permit(:user_id, :photo_id)
-        # end
+        def like_params
+            params.require(:like).permit(:user_id, :photo_id)
+        end
 
         def find_photos
             @photo = Photo.find(params[:photo_id])
         end
 
         def find_like
-            @like = @photo.likes.find(params[:id])
+            @like = @photo.likes
         end
 
         def already_liked?

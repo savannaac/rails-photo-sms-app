@@ -1,5 +1,7 @@
 <h1>upload a photo</h1>
 
+<%= link_to "back", :back %><br><br>
+
 <%= form_with model: @photo, url: user_photos_path(current_user, @photo), method: "post" do |f| %>
     <%= f.label :img_url, "photo url:" %>
     <%= f.text_field :img_url %><br /><br />
