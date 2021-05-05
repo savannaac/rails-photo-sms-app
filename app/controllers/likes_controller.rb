@@ -2,10 +2,15 @@ class LikesController < ApplicationController
     before_action :find_photos
     before_action :find_likes, only: [:destroy]
 
+    def new
+        @like = Like.new
+    end
+
     def create
         if already_liked?
             flash.alert = "oops, can't like more than once"
         else
+            # @photo.likes.create(like_params)
             @photo.likes.create(user_id: current_user.id)
         end
 
@@ -23,9 +28,9 @@ class LikesController < ApplicationController
     end
 
     private
-        def like_params
-            params.require(:like).permit(:user_id, :photo_id)
-        end
+        # def like_params
+        #     params.require(:like).permit(:user_id, :photo_id, :type)
+        # end
 
         def find_photos
             @photo = Photo.find(params[:photo_id])
