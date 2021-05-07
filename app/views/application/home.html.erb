@@ -6,7 +6,9 @@
     <%= link_to "create new photo", new_user_photo_path(current_user) %><br /><br />
     <%= button_to "sign out", destroy_user_session_path, method: "delete"%><br><br>
 
-    <%= link_to(image_tag(display_last_photo.img_url, height: 350, width: 350), user_photos_path(current_user)) %>
+    <% if display_last_photo&.img_url %>
+        <%= link_to(image_tag(display_last_photo.img_url, height: 350, width: 350), user_photos_path(current_user)) %>
+    <% end %>
 <% else %>
     <%= link_to "sign up", new_user_registration_path %><br />
     <%= link_to "log in", new_user_session_path %><br>

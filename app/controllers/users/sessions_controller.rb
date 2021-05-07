@@ -18,22 +18,22 @@ class Users::SessionsController < Devise::SessionsController
     #   super
     # end
 
-    def create
-      @user = User.find_or_create_by(uid: auth["uid"]) do |u|
-        u.name = auth["info"]["name"]
-        u.email = auth["info"]["email"]
-      end
+    # def create
+    #   @user = User.find_or_create_by(uid: auth["uid"]) do |u|
+    #     u.name = auth["info"]["name"]
+    #     u.email = auth["info"]["email"]
+    #   end
 
-      session[:user_id] = user.id 
+    #   session[:user_id] = user.id 
 
-      redirect_to root_path
-    end 
+    #   redirect_to root_path
+    # end 
 
-    private
+    # private
 
-    def auth 
-      request.env["omniauth.auth"]
-    end
+    # def auth 
+    #   request.env["omniauth.auth"]
+    # end
 
   # protected
 
