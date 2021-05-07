@@ -9,5 +9,7 @@
     <%= link_to(image_tag(display_last_photo.img_url, height: 350, width: 350), user_photos_path(current_user)) %>
 <% else %>
     <%= link_to "sign up", new_user_registration_path %><br />
-    <%= link_to "log in", new_user_session_path %>
+    <%= link_to "log in", new_user_session_path %><br>
+    
+    <%= button_to "log in with google", user_google_oauth2_omniauth_authorize_path %>
 <% end %>

@@ -41,6 +41,7 @@ yarn-debug.log*
 .yarn-integrity
 
 # Ignore application configuration
+.env
 /config/application.yml
 /config/credentials.yml
 /config/initializers/twilio.rb

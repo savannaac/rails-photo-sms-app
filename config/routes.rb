@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :admins, controllers: { omniauth_callbacks: "admins/omniauth_callbacks" }
-  devise_for :users #, controllers: { omniauth_callbacks: "omniauth" }
+  devise_for :users, controllers: { :omniauth_callbacks => "users/omniauth_callbacks" }
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  devise_scope :admin do
-    get "admins/sign_in", to: "admins/sessions#new", as: :new_admin_session
-    get "admins/sing_out", to: "admins/sessions#destroy", as: :destroy_admin_session
-  end
-  
+  # devise_scope :user do
+  #   get "sign_in", :to => "devise/sessions#new", as: :new_user_session 
+  #   get "sign_out", :to => "devise/sessions#destroy", as: :destroy_user_session
+  # end
+
   root "application#home"
 
   get "all", to: "application#all", as: "all"

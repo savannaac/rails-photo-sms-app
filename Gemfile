@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
 
+gem "activerecord-session_store"
 gem "devise", github: "heartcombo/devise"
 gem "dotenv-rails"
 gem "figaro"
