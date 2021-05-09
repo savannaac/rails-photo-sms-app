@@ -4,7 +4,6 @@
     <%= link_to "public feed", all_path %><br />
     <%= link_to "my photos", user_photos_path(current_user) %><br />
     <%= link_to "edit", edit_user_photo_path(current_user, @photo) %><br><br>
-    <%= button_to "sign out", destroy_user_session_path, method: "delete" %><br /><br />
 
     <%= image_tag(@photo.img_url) %><br />
 
