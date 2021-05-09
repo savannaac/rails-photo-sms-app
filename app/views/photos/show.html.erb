@@ -3,6 +3,7 @@
     <%= link_to "home", root_path %><br />
     <%= link_to "public feed", all_path %><br />
     <%= link_to "my photos", user_photos_path(current_user) %><br />
+    <%= link_to "upload another photo", new_user_photo_path(current_user) %><br />
     <%= link_to "edit", edit_user_photo_path(current_user, @photo) %><br><br>
 
     <%= image_tag(@photo.img_url) %><br />

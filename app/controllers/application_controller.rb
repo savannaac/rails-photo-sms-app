@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+    before_action :configure_permitted_parameters, if: :devise_controller?
 
     def all 
         @photos = Photo.all.where(:public => "public")
@@ -14,4 +15,11 @@ class ApplicationController < ActionController::Base
     end
     
     helper_method :display_last_photo
+
+    protected
+
+    def configure_permitted_parameters
+        devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+    end
 end
+
