@@ -1,7 +1,7 @@
 # rails-photo-app
-**PhotoApp** is a Rails app that lets users store linked photos (through URL) and also share them with others to like. 
+**PhotoApp** is a Rails app that lets users store linked photos and also share them with others to like. 
 
-  * Upload photos w/ or w/o a description (via URL), edit, or delete them 
+  * Upload photos, edit, or delete them 
   * Select as either private or public
   * Public photos are shared on the public feed, where users can like them
   
