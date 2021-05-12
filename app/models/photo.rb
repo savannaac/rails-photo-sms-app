@@ -6,5 +6,7 @@ class Photo < ApplicationRecord
      validates :img_url, presence: true
      validates :public, presence: true
 
+     scope :public_photos, -> { where(public: "public") }
+
      CHOICES = ["public", "private"]  
 end

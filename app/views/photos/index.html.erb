@@ -1,7 +1,7 @@
 <h1><%= current_user.name %>'s photos</h1>
 
 <%= link_to "home", root_path %><br />
-<%= link_to "create new photo", new_user_photo_path(current_user) %><br />
+<%= link_to "create new photo", new_user_photo_path(current_user) %><br /><br>
 <%= button_to "sign out", destroy_user_session_path, method: "delete"%><br><br><br>
 
 <% @photos.each do |photo| %>

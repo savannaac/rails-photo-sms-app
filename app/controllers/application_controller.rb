@@ -1,8 +1,9 @@
 class ApplicationController < ActionController::Base
     before_action :configure_permitted_parameters, if: :devise_controller?
 
-    def all 
-        @photos = Photo.all.where(:public => "public")
+    def all
+        @photos = Photo.all.public_photos 
+        # @photos = Photo.all.where(:public => "public")
     end
 
     # def last_photo
