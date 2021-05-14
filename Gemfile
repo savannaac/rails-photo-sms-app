@@ -10,6 +10,7 @@ gem "figaro"
 gem "omniauth"
 gem "omniauth-google-oauth2"
 gem "omniauth-rails_csrf_protection"
+gem "pry"
 gem "twilio-ruby", "~> 5.52.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'

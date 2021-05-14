@@ -2,12 +2,10 @@
 
 <%= link_to "back", :back %><br><br>
 
-<%= form_with model: @photo, url: user_photos_path(current_user, @photo), method: "post" do |f| %>
-    <%= f.label :img_url, "photo url:" %>
-    <%= f.text_field :img_url %><br /><br />
+<%= render "errors" %>
 
-    <%= f.label :description, "description:" %>
-    <%= f.text_field :description %>
+<%= form_with model: @photo, url: user_photos_path(current_user, @photo), method: "post" do |f| %>
+    <%= render "form" %>
 
     <%= f.collection_select :public, Photo::CHOICES, :to_s, :to_s %><br /><br />
 

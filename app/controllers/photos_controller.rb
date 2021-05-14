@@ -19,7 +19,10 @@ class PhotosController < ApplicationController
 
             redirect_to user_photo_path(current_user, @photo)
         else
-            redirect_to root_path
+            @photo.errors.full_messages
+
+            render :new
+            # redirect_to root_path
         end
     end
 
@@ -36,6 +39,8 @@ class PhotosController < ApplicationController
 
             redirect_to user_photo_path(current_user, @photo)
         else
+            @photo.errors.full_messages
+            
             render :edit
         end
     end
