@@ -5,7 +5,13 @@
 <%= render "errors" %>
 
 <%= form_with model: @photo, url: user_photos_path(current_user, @photo), method: "post" do |f| %>
-    <%= render "form" %>
+    <!-- <%= render "form" %> -->
+
+    <%= f.label "photo url" %>
+    <%= f.text_field :img_url %><br><br>
+
+    <%= f.label "description" %>
+    <%= f.text_field :description %>
 
     <%= f.collection_select :public, Photo::CHOICES, :to_s, :to_s %><br /><br />
 

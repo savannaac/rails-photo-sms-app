@@ -9,3 +9,9 @@ class Photo < ApplicationRecord
 
      CHOICES = ["public", "private"]  
 end
+
+# Homework before Monday (contact via Slack)
+
+# no model methods inside views -> helper_method
+# code challenge: create a route called popular_photo. 
+     # in this route you are to render the photo with the most likes

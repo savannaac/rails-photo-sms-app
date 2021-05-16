@@ -1,0 +1,8 @@
+<h1>most popular photo</h1>
+
+<%= link_to "back", :back %><br><br>
+
+<% @photos.order { |photo| photo.likes.count } %>
+<% if @most_liked&.img_url %>
+<%= image_tag(@most_liked.img_url, height: 200, width: 200) %>
+<% end %>

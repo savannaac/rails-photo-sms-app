@@ -6,16 +6,9 @@ class ApplicationController < ActionController::Base
         # @photos = Photo.all.where(:public => "public")
     end
 
-    # def last_photo
-    #    @photos = current_user.photos.last
+    # def photo
+    #     @most_liked = Like.popular_photo
     # end
-
-    def display_last_photo
-        # @photos = last_photo.img_url
-        @photo = current_user.photos.last
-    end
-    
-    helper_method :display_last_photo
 
     protected
 
@@ -24,3 +17,5 @@ class ApplicationController < ActionController::Base
     end
 end
 
+# code challenge: create a route called popular_photo. 
+# in this route you are to render the photo with the most likes
