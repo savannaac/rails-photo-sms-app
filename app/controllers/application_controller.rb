@@ -1,14 +1,17 @@
 class ApplicationController < ActionController::Base
     before_action :configure_permitted_parameters, if: :devise_controller?
+    before_action :most_liked_photo
 
     def all
-        @photos = Photo.all.public_photos 
+        @photos = Photo.all.public_photos
         # @photos = Photo.all.where(:public => "public")
     end
 
-    # def photo
-    #     @most_liked = Like.popular_photo
-    # end
+    def most_liked_photo
+        @liked_photo = all.most_liked.first
+        # all.most_liked.first
+    end
+    # helper_method :most_liked_photo
 
     protected
 

@@ -6,6 +6,7 @@ class Photo < ApplicationRecord
      validates_presence_of :img_url
 
      scope :public_photos, -> { where(public: "public") }
+     scope :most_liked, -> { order("photos.likes_count DESC") }
 
      CHOICES = ["public", "private"]  
 end
