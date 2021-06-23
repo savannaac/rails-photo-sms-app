@@ -1,4 +1,4 @@
-<h1>ZigZag</h1>
+<h1><div class="logo"><%= image_tag("boston-terrier-logo.jpg", height: "130", width: "130") %></div> 🅉🄸🄶🅉🄰🄶</h1> 
 
 <% if current_user %>  
     <%= link_to "public feed", all_path %><br />
@@ -11,8 +11,12 @@
         <%= link_to(image_tag(pic.img_url, height: 350, width: 350), user_photos_path(current_user)) %>
     <% end %>
 <% else %>
-    <%= link_to "sign up", new_user_registration_path %><br />
-    <%= link_to "log in", new_user_session_path %><br>
+    <div class="nav-container">
+    <ul>
+        <li id="sign-up"><%= link_to "sign up", new_user_registration_path %></li><br>
+        <li id="log-in"><%= link_to "log in", new_user_session_path %></li><br>
     
-    <%= button_to "log in with google", user_google_oauth2_omniauth_authorize_path %>
+        <%= button_to "log in with google", user_google_oauth2_omniauth_authorize_path %>
+    </ul>
+    </div>
 <% end %>
