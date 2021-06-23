@@ -11,12 +11,12 @@
         <%= link_to(image_tag(pic.img_url, height: 350, width: 350), user_photos_path(current_user)) %>
     <% end %>
 <% else %>
-    <div class="nav-container">
+   <center><div class="nav-container">
     <ul>
         <li id="sign-up"><%= link_to "sign up", new_user_registration_path %></li><br>
         <li id="log-in"><%= link_to "log in", new_user_session_path %></li><br>
     
         <%= button_to "log in with google", user_google_oauth2_omniauth_authorize_path %>
     </ul>
-    </div>
+    </div></center>
 <% end %>
