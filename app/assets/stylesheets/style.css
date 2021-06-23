@@ -38,6 +38,14 @@ ul {
     text-decoration: none;
 }
 
+@keyframes blink { 
+    50% { border-color: #8FF94B; } 
+}
+
+.nav-container:hover {
+    animation: blink .5s step-end infinite alternate;
+}
+
 .flex-display {
     display: flex;
     justify-content: center;
