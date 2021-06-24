@@ -4,7 +4,7 @@ h1 {
 }
 
 ul {
-    line-height: 95%;
+    line-height: 100%;
     list-style-type: none;
 }
 
@@ -19,7 +19,7 @@ ul {
     box-shadow: inset -0px -1px 2px #82A09D;
     font-family: futura, sans-serif; 
     height: 200px;
-    margin-top: 50px;
+    margin-top: 30px;
     padding-left: 20px;
     padding-top: 60px;
     text-align: left;
