@@ -14,7 +14,7 @@ ul {
 }
 
 .nav-container {
-    border: 2px solid #E0E0DD;
+    border: 2px dotted #E0E0DD;
     border-radius: 10px;
     box-shadow: inset -0px -1px 2px #82A09D;
     font-family: futura, sans-serif; 
