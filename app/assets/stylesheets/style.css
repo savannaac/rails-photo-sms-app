@@ -1,3 +1,9 @@
+body {
+    background-image: url("gray-watercolor-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 h1 {
     margin-top: 75px;
     text-align: center;
@@ -14,7 +20,8 @@ ul {
 }
 
 .nav-container {
-    border: 2px solid #E0E0DD;
+    background-color: #FFF;
+    border: 2px solid #BBBBBB;
     border-radius: 10px;
     box-shadow: inset -0px -1px 2px #82A09D;
     font-family: futura, sans-serif; 
@@ -24,13 +31,6 @@ ul {
     padding-top: 60px;
     text-align: left;
     width: 200px;
-}
-
-.black-container {
-    border-radius: 10px; 
-    height: 300px;
-    margin-bottom: 50px;
-    width: 300px;
 }
 
 #sign-up a{
