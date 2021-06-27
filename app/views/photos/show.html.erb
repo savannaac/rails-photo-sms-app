@@ -14,7 +14,7 @@
         <%= button_to "delete photo", @photo, method: "delete" %><br />
     </div>
 <% else %>
-    <h2>APP NAME</h2>
+    <h1><div class="logo"><%= image_tag("boston-terrier-logo.jpg", height: "130", width: "130") %></div> 🅉🄸🄶🅉🄰🄶</h1> 
         <%= link_to "sign up", new_user_registration_path %><br />
         <%= link_to "log in", new_user_session_path %>
 <% end %>
