@@ -6,6 +6,15 @@ body {
 }
 
 h1 {
+    font-family: futura, sans-serif;
+    margin-top: 75px;
+    text-align: center;
+}
+
+h2 {
+    font-family: "futura", sans-serif;
+    font-size: 35px;
+    font-style: italic;
     margin-top: 75px;
     text-align: center;
 }
