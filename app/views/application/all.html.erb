@@ -9,10 +9,10 @@
 
 <% @photos.each do |photo| %>
     <%= image_tag(photo.img_url, height: 200, width: 200) %>
-    <%= photo.likes.count %> <%= (photo.likes.count) == 1 ? "like" : "likes" %> |
-    <%= photo.likes.where(type: "super like").count %> <%= (photo.likes.where(type: "super like").count) == 1 ? "super like" : "super likes" %>
+    <%= photo.likes.count %> <%= (photo.likes.count) == 1 ? "like" : "likes" %>
+   <!-- | <%= photo.likes.where(type: "super like").count %> <%= (photo.likes.where(type: "super like").count) == 1 ? "super like" : "super likes" %> -->
     <%= button_to "like", photo_likes_path(photo), method: :post %><br>
-    <%= button_to "super like", photo_likes_path(photo), method: :post %><br><br><br>
+    <!-- <%= button_to "super like", photo_likes_path(photo), method: :post %><br><br><br> -->
 
     <!-- <%= form_with model: @like, url: photo_likes_path(photo), method: "post" do |f| %> -->
     <!--    <%= f.collection_select :type, Like::CHOICES, :to_s, :to_s %> -->
