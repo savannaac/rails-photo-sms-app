@@ -1,6 +1,8 @@
 <h1><%= image_tag("boston-terrier-logo.jpg", height: "130", width: "130") %></h1>
 
 <% if @photo.user_id == current_user.id %>
+<h3><%= @photo.description %> (<%= @photo.public %>)</h3> 
+
 <ul>
     <li id = "home"><%= link_to "home", root_path %></li>
     <li id = "public-feed"><%= link_to "public feed", all_path %></li>
@@ -11,8 +13,6 @@
     <%= image_tag(@photo.img_url) %><br />
 
     <div>
-        <p><%= @photo.description %> (<%= @photo.public %>)</p> 
-
         <%= button_to "delete photo", @photo, method: "delete" %><br />
     </div>
 <% else %>
