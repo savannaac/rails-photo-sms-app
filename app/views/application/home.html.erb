@@ -4,7 +4,7 @@
     <ul>
         <li id="public-feed"><%= link_to "public feed", all_path %></li>
         <li id="my-photos"><%= link_to "my photos", user_photos_path(current_user) %></li>
-        <li id="new-photo"><%= link_to "create new photo", new_user_photo_path(current_user) %><br /><br /></li>
+        <li id="new-photo"><%= link_to "upload photo", new_user_photo_path(current_user) %></li>
         <%= button_to "sign out", destroy_user_session_path, method: "delete"%><br><br>
     </ul>
     <% pic = current_user.photos.last %>

@@ -1,12 +1,13 @@
 <h1><%= image_tag("boston-terrier-logo.jpg", height: "130", width: "130") %></h1>
 <h2>public feed</h2>
 
-<%= link_to "home", root_path %><br />
-<%= link_to "most liked photo", most_liked_path %><br />
-<%= link_to "my photos", user_photos_path(current_user) %><br />
-<%= link_to "create new photo", new_user_photo_path(current_user) %><br /><br />
-<%= button_to "sign out", destroy_user_session_path, method: "delete"%><br><br>
-
+<ul>
+    <li id = "home"><%= link_to "home", root_path %><br /></li>
+    <li id = "most-liked"><%= link_to "most liked photo", most_liked_path %></li>
+    <li id = "my-photos"><%= link_to "my photos", user_photos_path(current_user) %></li>
+    <li id = "new-photo"><%= link_to "upload photo", new_user_photo_path(current_user) %></li>
+    <%= button_to "sign out", destroy_user_session_path, method: "delete"%><br><br>
+</ul>
 <% @photos.each do |photo| %>
     <%= image_tag(photo.img_url, height: 200, width: 200) %>
     <%= photo.likes.count %> <%= (photo.likes.count) == 1 ? "like" : "likes" %>

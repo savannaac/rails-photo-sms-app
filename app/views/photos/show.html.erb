@@ -1,12 +1,13 @@
 <h1><%= image_tag("boston-terrier-logo.jpg", height: "130", width: "130") %></h1>
 
 <% if @photo.user_id == current_user.id %>
-    <%= link_to "home", root_path %><br />
-    <%= link_to "public feed", all_path %><br />
-    <%= link_to "my photos", user_photos_path(current_user) %><br />
-    <%= link_to "upload another photo", new_user_photo_path(current_user) %><br />
-    <%= link_to "edit", edit_user_photo_path(current_user, @photo) %><br><br>
-
+<ul>
+    <li id = "home"><%= link_to "home", root_path %></li>
+    <li id = "public-feed"><%= link_to "public feed", all_path %></li>
+    <li id = "my-photos"><%= link_to "my photos", user_photos_path(current_user) %></li>
+    <li id = "new-photo"><%= link_to "upload photo", new_user_photo_path(current_user) %></li>
+    <li id = "edit"><%= link_to "edit", edit_user_photo_path(current_user, @photo) %></li><br><br>
+</ul>
     <%= image_tag(@photo.img_url) %><br />
 
     <div>

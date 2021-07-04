@@ -1,7 +1,7 @@
 <h1><%= image_tag("boston-terrier-logo.jpg", height: "130", width: "130") %></h1>
 
 <% if @photo.user_id == current_user.id %>
-    <h1>edit photo</h1>
+    <h2>edit photo</h2>
 
     <%= link_to "back", :back %><br><br>
 

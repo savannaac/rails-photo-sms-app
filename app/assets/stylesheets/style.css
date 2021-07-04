@@ -24,7 +24,7 @@ ul li{
     float: left;
     line-height: 150%;
     list-style-type: none;
-    padding-right: 20px;
+    padding-right: 10px;
 }
 
 .logo {
@@ -66,6 +66,17 @@ ul li{
     text-decoration: none;
 }
 
+#home a{
+    border: 1px solid #ECECEC;
+    border-radius: 5px;
+    box-shadow: inset -0px -1px 2px #82A09D;
+    color: #000;
+    font-family: futura, sans-serif; 
+    font-size: 15px;
+    padding: 7px;
+    text-decoration: none;
+}
+
 #public-feed a{
     border: 1px solid #ECECEC;
     border-radius: 5px;
@@ -75,6 +86,17 @@ ul li{
     font-size: 15px;
     padding: 7px;
     text-decoration: none;
+}
+
+#most-liked a{
+    border: 1px solid #ECECEC;
+    border-radius: 5px;
+    box-shadow: inset -0px -1px 2px #82A09D;
+    color: #000;
+    font-family: futura, sans-serif; 
+    font-size: 15px;
+    padding: 7px;
+    text-decoration: none; 
 }
 
 #my-photos a{
@@ -89,6 +111,17 @@ ul li{
 }
 
 #new-photo a{
+    border: 1px solid #ECECEC;
+    border-radius: 5px;
+    box-shadow: inset -0px -1px 2px #82A09D;
+    color: #000;
+    font-family: futura, sans-serif; 
+    font-size: 15px;
+    padding: 7px;
+    text-decoration: none;
+}
+
+#edit a{
     border: 1px solid #ECECEC;
     border-radius: 5px;
     box-shadow: inset -0px -1px 2px #82A09D;
