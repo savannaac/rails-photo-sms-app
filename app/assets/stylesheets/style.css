@@ -140,6 +140,17 @@ ul li{
     text-decoration: none;
 }
 
+.back-link {
+    border: 1px solid #ECECEC;
+    border-radius: 5px;
+    box-shadow: inset -0px -1px 2px #82A09D;
+    color: #000;
+    font-family: futura, sans-serif; 
+    font-size: 15px;
+    padding: 7px;
+    text-decoration: none;
+}
+
 @keyframes blink { 
     50% { border-color: #8FF94B; } 
 }
