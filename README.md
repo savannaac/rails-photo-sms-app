@@ -1,5 +1,5 @@
-# rails-photo-app
-**PhotoApp** is a Rails app that lets users store linked photos and also share them with others to like. 
+# ZigZag
+**ZigZag** is a Rails app that lets users store linked photos and also share them with others to like. 
 
   * Upload photos, edit, or delete them 
   * Select as either private or public
